@@ -3,7 +3,7 @@ import pygame
 import random
 pygame.init()
 
-#open a new window, caption it "Pong"
+
 screen = pygame.display.set_mode((700,500))
 pygame.display.set_caption("breakout")
 
@@ -18,7 +18,7 @@ clock = pygame.time.Clock()
 p1x = 350
 p1y = 475
 p1Score = 0
-hp = 3
+hp = 4
 #ball variables---------------------------------------------
 ball_x = 350 #xposition
 ball_y = 170 #yposition
@@ -30,7 +30,7 @@ class brick:
     def __init__(self, xpos, ypos):
         self.xpos = xpos
         self.ypos = ypos
-        self.color = (random.randrange(100,255),random.randrange(100,250), random.randrange(100,250))
+        self.color = (random.randrange(10,255),random.randrange(0,250), random.randrange(0,250))
         self.isDead = False
     def draw(self):
         if not self.isDead:
@@ -74,7 +74,7 @@ while not doExit: #GAME LOOP-------------------------
         p1x-=5
     if keys[pygame.K_d]:
         p1x+=5
-
+ 
         
     #ball movement
     ball_x += bVx
@@ -159,11 +159,11 @@ while not doExit: #GAME LOOP-------------------------
            # updates the screen
            
            #display scores
-    font = pygame.font.Font(None, 74) #use default fontwwwwwws
+    font = pygame.font.Font(None, 74) #use default fonts
     text = font.render(str(p1Score), 1, (255, 255, 255))
     screen.blit(text, (325,10))
     
-    font = pygame.font.Font(None, 74) #use default fontwwwwwws
+    font = pygame.font.Font(None, 74) #use default fonts
     text = font.render(str(hp), 1, (255, 255, 255))
     screen.blit(text, (10,10))
            
