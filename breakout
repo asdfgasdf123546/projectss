@@ -21,7 +21,7 @@ p1Score = 0
 hp = 4
 #ball variables---------------------------------------------
 ball_x = 350 #xposition
-ball_y = 170 #yposition
+ball_y = 200 #yposition
 ball_size = 15
 bVx = 4 #x velocity (horizontal speed)
 bVy = 4 #y velocity (vertical speed)
@@ -45,18 +45,24 @@ class brick:
                 return True
             return False
         
-brick1 = brick(0,50)
-brick2 = brick(120,50)
-brick3 = brick(240,50)
-brick4 = brick(360,50)
-brick5 = brick(480,50)
-brick6 = brick(600,50)
-brick7 = brick(0,120)
-brick8 = brick(120,120)
-brick9 = brick(240,120)
-brick10 = brick(360,120)
-brick11 = brick(480,120)
-brick12 = brick(600,120)
+brick1 = brick(0,0)
+brick2 = brick(120,0)
+brick3 = brick(240,0)
+brick4 = brick(360,0)
+brick5 = brick(480,0)
+brick6 = brick(600,0)
+brick7 = brick(0,58)
+brick8 = brick(120,58)
+brick9 = brick(240,55)
+brick10 = brick(360,55)
+brick11 = brick(480,55)
+brick12 = brick(600,55)
+brick13 = brick(0,120)
+brick14 = brick(120,120)
+brick15 = brick(240,120)
+brick16 = brick(360,120)
+brick17 = brick(480,120)
+brick18 = brick(600,120)
 
 while not doExit: #GAME LOOP-------------------------
     
@@ -131,8 +137,18 @@ while not doExit: #GAME LOOP-------------------------
         bVy *= -1
     if brick12.collide(ball_x, ball_y):
         bVy *= -1
-    
-         
+    if brick13.collide(ball_x, ball_y):
+        bVy *= -1
+    if brick14.collide(ball_x, ball_y):
+        bVy *= -1
+    if brick15.collide(ball_x, ball_y):
+        bVy *= -1
+    if brick16.collide(ball_x, ball_y):
+        bVy *= -1
+    if brick17.collide(ball_x, ball_y):
+        bVy *= -1
+    if brick18.collide(ball_x, ball_y):
+        bVy *= -1        
 
      # render section -----------------------------------------
      
@@ -154,8 +170,12 @@ while not doExit: #GAME LOOP-------------------------
     brick10.draw()
     brick11.draw()
     brick12.draw()
-   
-    
+    brick13.draw()
+    brick14.draw()
+    brick15.draw()
+    brick16.draw()
+    brick17.draw()
+    brick18.draw()
            # updates the screen
            
            #display scores
